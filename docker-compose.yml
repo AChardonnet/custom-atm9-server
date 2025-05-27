@@ -16,20 +16,7 @@ services:
     networks:
       - minecraft-network
     volumes:
-      # attach a directory relative to the directory containing this compose file
       - ./minecraft-data:/data
-
-  playit:
-    build:
-      context: .
-      dockerfile: Dockerfile
-    networks:
-      - minecraft-network
-    stdin_open: true
-    tty: true
-    restart: unless-stopped
-    volumes:
-      - ./playit-config:/root/.playit  # persistent config storage if needed
 
 networks:
   minecraft-network:
